@@ -1,6 +1,7 @@
 <?php
 namespace App\Controller;
 
+use App\DB;
 use App\Excel;
 
 class HomeController
@@ -28,5 +29,24 @@ class HomeController
 			echo $e->getFile().'('.$e->getLine().'): '.$e->getMessage()."\n";
 			echo $e->getTraceAsString();
 		}
+	}
+
+	public function db()
+	{
+		$username = getenv('db_uesr');
+		$password = getenv('db_pwd');
+		$dbName = getenv('db_name');
+		$instanceUnixSocket = getenv('db_socket');
+		
+		$db = new DB();
+		$conn = $db->conn($username, $password, $dbName, $instanceUnixSocket);
+
+		$sth = $conn->prepare("SELECT * FROM file");
+		$sth->execute();
+
+		/* Fetch all of the remaining rows in the result set */
+		print("Fetch all of the remaining rows in the result set:\n");
+		$result = $sth->fetchAll();
+		print_r($result);
 	}
 }

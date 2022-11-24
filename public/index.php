@@ -14,6 +14,10 @@ switch (@parse_url($_SERVER['REQUEST_URI'])['path']) {
         $controller = new HomeController();
         $controller->excel();
         break;
+    case '/db':
+        $controller = new HomeController();
+        $controller->db();
+        break;
     case '/job/a':
         // Taskname and Queuename are two of several useful Cloud Tasks headers available on the request.
         $taskName = $_SERVER['HTTP_X_APPENGINE_TASKNAME'] ?? '';
