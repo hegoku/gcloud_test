@@ -1,0 +1,7 @@
+runtime: php81
+env: standard
+service: default
+
+runtime_config:
+  document_root: public/
+  skip_lockdown_document_root: true
