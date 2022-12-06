@@ -12,7 +12,8 @@ steps:
       sed -i 's/%DB_USER%/$$DB_USER/g' app.yaml &&
       sed -i 's/%DB_PASS%/$$DB_PASS/g' app.yaml && 
       sed -i 's/%DB_NAME%/$$DB_NAME/g' app.yaml &&
-      sed -i 's/%DB_SOCKET%/$$DB_SOCKET/g' app.yaml
+      sed -i 's/%DB_SOCKET%/$$DB_SOCKET/g' app.yaml &&
+      cat app.yaml
   secretEnv: ['DB_USER', 'DB_PASS', 'DB_NAME', 'DB_SOCKET']
 timeout: '1600s'
 

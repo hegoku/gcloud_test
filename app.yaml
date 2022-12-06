@@ -8,6 +8,6 @@ runtime_config:
 
 env_variables:
   db_uesr: '%DB_USER%'
-  db_pwd: '%DB_PASS$'
+  db_pwd: '%DB_PASS%'
   db_name: '%DB_NAME%'
   db_socket: '%DB_SOCKET%'
