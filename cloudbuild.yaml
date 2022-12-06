@@ -12,9 +12,9 @@ availableSecrets:
   secretManager:
     - versionName: projects/$PROJECT_NUMBER/secrets/DB_USER/versions/1
       env: DB_USER
-    - versionName: projects/$PROJECT_NUMBER/secrets/DB_PASS/versions/1
+    - versionName: projects/$PROJECT_NUMBER/secrets/DB_PASS/versions/2
       env: DB_PASS
-    - versionName: projects/$PROJECT_NUMBER/secrets/DB_NAME/versions/1
+    - versionName: projects/$PROJECT_NUMBER/secrets/DB_NAME/versions/2
       env: DB_NAME
     - versionName: projects/$PROJECT_NUMBER/secrets/DB_SOCKET/versions/1
       env: DB_SOCKET
