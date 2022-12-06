@@ -2,7 +2,7 @@ steps:
 - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
   entrypoint: 'bash'
   args: ['-c', 'gcloud config set app/cloud_build_timeout 1600 && gcloud app deploy']
-  secretEnv: ['DATABASE_PASS']
+  secretEnv: ['DB_USER', 'DB_PASS', 'DB_NAME', 'DB_SOCKET']
 timeout: '1600s'
 
 options:
@@ -11,4 +11,10 @@ options:
 availableSecrets:
   secretManager:
     - versionName: projects/$PROJECT_NUMBER/secrets/DB_USER/versions/1
-      env: DATABASE_PASS
+      env: DB_USER
+    - versionName: projects/$PROJECT_NUMBER/secrets/DB_PASS/versions/1
+      env: DB_PASS
+    - versionName: projects/$PROJECT_NUMBER/secrets/DB_NAME/versions/1
+      env: DB_NAME
+    - versionName: projects/$PROJECT_NUMBER/secrets/DB_SOCKET/versions/1
+      env: DB_SOCKET

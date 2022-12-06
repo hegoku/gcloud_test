@@ -7,7 +7,7 @@ runtime_config:
   skip_lockdown_document_root: true
 
 env_variables:
-  db_uesr: "1"
+  db_uesr: ${DB_USER}
   db_pwd: ${DATABASE_PASS}
-  db_name: "1"
-  db_socket: "1"
+  db_name: ${DB_NAME}
+  db_socket: ${DB_SOCKET}
